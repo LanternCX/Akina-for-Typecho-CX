@@ -138,8 +138,12 @@ if($this->options->sticky){
 							}
 							//网易云音乐
 							if ($this->options->Music){
-								echo '<li><a href="https://music.163.com/#/user/home?id='.$this->options->Music.'" target="_blank" rel="nofollow" class="social-bilibili"><img src="'.theurl.'images/music.png"/></a></li>';
+								echo '<li><a href="https://music.163.com/#/user/home?id='.$this->options->Music.'" target="_blank" rel="nofollow" class="social-netmusic"><img src="'.theurl.'images/music.png"/></a></li>';
 							}
+                            //Twitter
+                            if ($this->options->Twitter){
+                                echo '<li><a href="'.$this->options->Twitter.'" target="_blank" rel="nofollow" class="social-twitter"><img src="'.theurl.'images/x.png"/></a></li>';
+                            }
 						?>
 					<ul>
 				</div>
@@ -168,7 +172,7 @@ if($this->options->sticky){
 				// 循环输出
 				for($i=0;$i<count($featureCid);$i++){
 				    $featureNum = $i + 1;
-					$this->widget('Widget_Archive@lunbo'.$i, 'pageSize=1&type=single', 'cid='.$featureCid[$i])->to($ji);
+                    $this->widget('Widget_Archive@lunbo'.$i, 'pageSize=1&type=single', 'cid='.$featureCid[$i])->to($ji);
                     if ($ji->fields->thumbnail){
 						$featureImg = $ji->fields->thumbnail;
 					} else {

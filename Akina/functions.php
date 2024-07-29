@@ -68,7 +68,7 @@ echo '<span class="themeConfig"><h3>博客信息</h3></span>';
 	
 //个人信息
     //新浪
-    $SINA = new Typecho_Widget_Helper_Form_Element_Text('SINA', NULL,'https://weibo.com/', _t('<br><span class="themeConfig"><h3>个人信息</h3></span><div class="info">不填写相关信息时可以隐藏该信息和图标</div>新浪微博地址'), _t('默认新浪微博首页（请规范填写，需https://，http://或者//）'));
+    $SINA = new Typecho_Widget_Helper_Form_Element_Text('SINA', NULL,'', _t('<br><span class="themeConfig"><h3>个人信息</h3></span><div class="info">不填写相关信息时可以隐藏该信息和图标</div>新浪微博地址'), _t('默认新浪微博首页（请规范填写，需https://，http://或者//）'));
     $form->addInput($SINA);
     //微信
     $Wechat = new Typecho_Widget_Helper_Form_Element_Text('Wechat', NULL,'', _t('微信号'), _t('首页个人信息'));
@@ -85,15 +85,19 @@ echo '<span class="themeConfig"><h3>博客信息</h3></span>';
     $Qzone = new Typecho_Widget_Helper_Form_Element_Text('Qzone', NULL,'', _t('QQ空间信息'), _t('首页个人QQ空间信息:https://user.qzone.qq.com/QQ号码'));
     $form->addInput($Qzone);
     //Github
-    $Github = new Typecho_Widget_Helper_Form_Element_Text('Github', NULL,'https://github.com/', _t('Github地址'), _t('Github主页地址（请规范填写，需https://，http://或者//）'));
+    $Github = new Typecho_Widget_Helper_Form_Element_Text('Github', NULL,'', _t('Github地址'), _t('Github主页地址（请规范填写，需https://，http://或者//）'));
     $form->addInput($Github);
     //哔哩哔哩
-    $Bilibili = new Typecho_Widget_Helper_Form_Element_Text('Bilibili', NULL,'https://www.bilibili.com/', _t('Bilibili地址'), _t('Bilibili主页地址（请规范填写，需https://，http://或者//）'));
+    $Bilibili = new Typecho_Widget_Helper_Form_Element_Text('Bilibili', NULL,'', _t('Bilibili地址'), _t('Bilibili主页地址（请规范填写，需https://，http://或者//）'));
     $form->addInput($Bilibili);
 	
     //网易云音乐
-    $Music = new Typecho_Widget_Helper_Form_Element_Text('Music', NULL,'https://music.163.com/', _t('网易云音乐用户ID'), _t('登陆网页版网易云音乐，点击个人主页。https://music.163.com/#/user/home?id=这里是ID'));
+    $Music = new Typecho_Widget_Helper_Form_Element_Text('Music', NULL,'', _t('网易云音乐用户ID'), _t('登陆网页版网易云音乐，点击个人主页。https://music.163.com/#/user/home?id=这里是ID'));
     $form->addInput($Music);
+
+    //Twitter
+    $Twitter = new Typecho_Widget_Helper_Form_Element_Text('Twitter', NULL,'', _t('X地址'), _t('X(Twitter)地址，需https://，http://或者//'));
+    $form->addInput($Twitter);
 	
 //文章推荐
     $sticky = new Typecho_Widget_Helper_Form_Element_Text('sticky', NULL,NULL, _t('<br><span class="themeConfig"><h3>文章推荐</h3></span>文章置顶'), _t('填写文章cid，按照输入顺序显示（请以半角逗号,或空格分隔）'));

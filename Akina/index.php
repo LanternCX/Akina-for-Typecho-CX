@@ -43,6 +43,7 @@ if($this->options->sticky){
 	}
 }
 ?>
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <!-- 判断是否搜索 -->
 <?php if(!$this->is('index') && !$this->is('front')): ?>
   <!-- 透明导航栏后调整间距 -->
@@ -99,7 +100,28 @@ if($this->options->sticky){
 					</div>
 					<!-- 简介 -->
 					<div class="header-info">
-					<p><?php $this->options->headerinfo() ?></p>
+                        <p id="typewriter">
+                            <script>
+                                try{
+                                    const app = document.getElementById('typewriter');
+
+                                    const typewriter = new Typewriter(app, {
+                                        loop: true
+                                    });
+
+                                    const descStr = "<?php echo $this->options->headerinfo() ?>"
+                                    const descStrList = descStr.split(";")
+                                    descStrList.forEach( str => {
+                                        typewriter.typeString(str)
+                                            .pauseFor(2500)
+                                            .deleteAll()
+                                    })
+                                    typewriter.start()
+                                }catch(e){
+                                    console.log(e)
+                                }
+                            </script>
+                        </p>
 					</div>
 					<!-- 社交信息 -->
 					<ul class="top-social">

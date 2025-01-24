@@ -49,6 +49,7 @@
   }
 </style>
 <?php endif ?>
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <div id="content" class="site-content">
 <?php
     // 文章目录展示以及切换
@@ -153,7 +154,31 @@
 				</div>
 			</div>
 			<hr>
-			<p><i class="iconfont">&#xe61a;</i><?php $this->options->headerinfo() ?></p>
+            <p>
+                <i class="iconfont">&#xe61a;</i>
+                <span id="typewriter">
+                    <script>
+                        try{
+                            const app = document.getElementById('typewriter');
+
+                            const typewriter = new Typewriter(app, {
+                                loop: true
+                            });
+
+                            const descStr = "<?php echo $this->options->headerinfo() ?>"
+                            const descStrList = descStr.split(";")
+                            descStrList.forEach( str => {
+                                typewriter.typeString(str)
+                                    .pauseFor(2500)
+                                    .deleteAll()
+                            })
+                            typewriter.start()
+                        }catch(e){
+                            console.log(e)
+                        }
+                    </script>
+                </span>
+            </p>
 		</section>
 		</main>
 	</div>

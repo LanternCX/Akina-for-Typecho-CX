@@ -88,7 +88,7 @@
   .site-top ul li a, .entry-title a, #mo-nav ul li a, .fytx_alert_background .fytx_alert_box {
       color: var(--main-text-color);
   }
-  .entry-content p, #toc strong, #toc-container a, h1.entry-title, .entry-content h2 {
+  .entry-content p, #toc strong, #toc-container a, h1.entry-title {
       color: var(--main-text-color);
   }
   .post-list hr {
@@ -107,7 +107,7 @@
       color: #d8d8d8;
   }
 
-  .entry-content p, #toc strong, #toc-container a, h1.entry-title, .entry-content h2, .donate a, .post-share, .show-share {
+  .entry-content p, #toc strong, #toc-container a, h1.entry-title, .donate a, .post-share, .show-share, .entry-content h1, h2, h3, h4, h5 {
       color: var(--main-text-color);
   }
   .entry-header hr {
@@ -117,12 +117,9 @@
       background-color: var(--main-info-color);
   }
 
-  .open-message, .comment-respond #cancel-comment-reply-link, .entry-content h3 {
+  .open-message, .comment-respond #cancel-comment-reply-link {
       background-color: var(--main-info-color);
       color: var(--main-text-color);
-  }
-  .entry-content h3 {
-      border-left: 5px solid #4c9aaf;
   }
   .open-message:after {
       border-bottom: 10px solid var(--main-info-color);
